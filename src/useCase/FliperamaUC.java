@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class FliperamaUC {
 
-    JButton butaoAdicionar = new JButton();
+    JButton butaoAdicionarCredito = new JButton();
     public FliperamaUC(){
         
     }
