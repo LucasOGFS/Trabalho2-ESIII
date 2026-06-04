@@ -8,6 +8,10 @@ public class PedraPapelTesoura extends Jogo {
 
     private static Random random = new Random();
 
+    public PedraPapelTesoura() {
+        super("Pedra, Papel e Tesoura", 1);
+    }
+
     public enum Jogada {
         PEDRA,
         PAPEL,
