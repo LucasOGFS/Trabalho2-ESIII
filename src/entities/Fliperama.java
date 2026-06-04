@@ -6,7 +6,8 @@ import java.util.List;
 public class Fliperama {
 
     private int creditos;
-    List<Jogo> jogosCadastrados = new ArrayList<>();
+    private List<Jogo> jogosCadastrados = new ArrayList<>();
+    private List<RegistroRanking> ranking = new ArrayList<>();
 
     // Métodos
 
@@ -22,12 +23,20 @@ public class Fliperama {
         return creditos;
     }
 
+    public List<Jogo> getJogosCadastrados(){
+        return jogosCadastrados;
+    }
+
 //    public Jogo buscarNomePorJogo(String nome){
-//        return Jogo;
+//        return jogo;
 //    }
 
     public void cadastrarJogo(Jogo jogo){
 
+    }
+
+    public boolean entrouNoRanking(int pontuacao){
+        return false;
     }
 
 }
