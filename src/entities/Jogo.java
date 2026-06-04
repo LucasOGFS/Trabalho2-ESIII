@@ -5,8 +5,8 @@ public abstract class Jogo {
     private int pontuacaoMinimaRanking;
 
     public Jogo(String nome, int pontuacaoMinimaRanking){
-        nome = this.nome;
-        pontuacaoMinimaRanking = this.pontuacaoMinimaRanking;
+        this.nome = nome;
+        this.pontuacaoMinimaRanking =  pontuacaoMinimaRanking;
     }
 
     public String getNome() {
