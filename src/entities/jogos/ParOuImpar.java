@@ -21,13 +21,13 @@ public class ParOuImpar extends Jogo {
     }
 
     private final Random random = new Random();
-    
+
     //Retorna um Resultado. Precisamos armazenar esse retorno em StringBuilder para transformar em uma String
     public Resultado jogarParOuImpar(Escolha escolhaJogador, int numeroJogador) {
 
         int maquina = random.nextInt(200);
 
-        // Valida se o número é PAR uma única vez. Se for par == true
+        // Valida se o número é PAR uma única vez. Se for par, ehPar == true
         boolean ehPar = (numeroJogador + maquina) % 2 == 0;
 
         switch (escolhaJogador) {
@@ -43,5 +43,3 @@ public class ParOuImpar extends Jogo {
         }
     }
 }
-
-
