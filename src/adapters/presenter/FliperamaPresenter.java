@@ -1,4 +1,4 @@
-package Adapters.presenter;
+package adapters.presenter;
 
 public class FliperamaPresenter {
 }

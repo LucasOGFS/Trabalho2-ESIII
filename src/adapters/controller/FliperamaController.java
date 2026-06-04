@@ -1,4 +1,4 @@
-package Adapters.controller;
+package adapters.controller;
 
 public class FliperamaController {
 }
