@@ -7,7 +7,6 @@ import entities.RegistroRanking;
 
 public interface JogarPartidaInput {
     void iniciarPartida(String nomeJogo);
-    void RegistrarNomeRanking (RegistroRanking registro, Ranking ranking);
     void inserirFicha();
     void realizarJogada(int linha, int coluna);
 }

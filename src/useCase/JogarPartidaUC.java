@@ -25,11 +25,6 @@ public class JogarPartidaUC implements JogarPartidaInput {
     }
 
     @Override
-    public void RegistrarNomeRanking(RegistroRanking registro, Ranking ranking) {
-
-    }
-
-    @Override
     public void inserirFicha() {
 
     }

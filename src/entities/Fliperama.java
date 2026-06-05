@@ -1,29 +1,32 @@
+/* Cada fliperama é uma máquina, portanto deve-se passar uma lista de jogos para cada máquina*/
 package entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fliperama {
-
+//atributos
     private int creditos;
     List<Jogo> jogosCadastrados = new ArrayList<>();
 
+//construtor
     public Fliperama(int creditos, List<Jogo> jogosCadastrados) {
         this.creditos = creditos;
         this.jogosCadastrados = jogosCadastrados;
     }
 
 // Métodos
-
-    public void adicionarCreditos(int n){
-        creditos = creditos + n;
+    public void adicionarCreditos(){
+        creditos++;
     }
 
-    public void consumirCreditos(){
+    public boolean consumirCreditos(){
         if(creditos > 0){
             creditos--;
+            return true;
         }else{
-            return;
+
+            return false;
         }
     }
 
