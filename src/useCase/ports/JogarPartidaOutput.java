@@ -1,5 +1,10 @@
 package useCase.ports;
 
-public class JogarPartidaOutput {
+import entities.Ranking;
+import entities.RegistroRanking;
 
+public interface JogarPartidaOutput {
+void finalizarPartida();
+void RegistrarNomeRanking (RegistroRanking registro, Ranking ranking);
 }
+

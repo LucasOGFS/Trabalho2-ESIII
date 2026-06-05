@@ -1,11 +1,13 @@
 package entities;
 
 public abstract class Jogo {
+//atributos
     private String nome;
     private int pontuacao;
     private int vidas;
     private Ranking ranking;
 
+//construtor
     public Jogo(String nome, int pontuacao, int vidas, Ranking ranking) {
         this.nome = nome;
         this.pontuacao = pontuacao;
@@ -13,6 +15,7 @@ public abstract class Jogo {
         this.ranking = ranking;
     }
 
+//métodos
     public String getNome() {
         return nome;
     }
@@ -21,11 +24,14 @@ public abstract class Jogo {
         pontuacao = pontuacao + 100;
     }
 
-    public void pontuarEmpate(){
+    public void pontuarEmpate()
+    {
         pontuacao = pontuacao + 50;
+
     }
 
-    public int getPontuacao(){
+    public int getPontuacao()
+    {
         return pontuacao;
     }
 
