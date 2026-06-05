@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -25,5 +26,9 @@ public class Ranking {
         }
         int menorPontuacaoAtual = ranking.get(ranking.size() - 1).getPontuacao();
         return pontuacao > menorPontuacaoAtual;
+    }
+
+    public List<RegistroRanking> getRanking() {
+        return Collections.unmodifiableList(ranking);
     }
 }
