@@ -2,9 +2,12 @@
 
 package useCase.ports;
 
+import entities.Ranking;
+import entities.RegistroRanking;
+
 public interface JogarPartidaInput {
     void iniciarPartida(String nomeJogo);
-    void RegistrarNomeRanking (String nomeJogador);
+    void RegistrarNomeRanking (RegistroRanking registro, Ranking ranking);
     void inserirFicha();
     void realizarJogada(int linha, int coluna);
 }

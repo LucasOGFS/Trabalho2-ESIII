@@ -2,30 +2,35 @@ package entities;
 
 public abstract class Jogo {
     private String nome;
-    private int pontuacaoMinimaRanking;
+    private int pontuacao;
+    private int vidas;
+    private Ranking ranking;
 
-    public Jogo(String nome, int pontuacaoMinimaRanking){
+    public Jogo(String nome, int pontuacao, int vidas, Ranking ranking) {
         this.nome = nome;
-        this.pontuacaoMinimaRanking =  pontuacaoMinimaRanking;
+        this.pontuacao = pontuacao;
+        this.vidas = vidas;
+        this.ranking = ranking;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public int getPontuacaoMinimaRanking() {
-        return pontuacaoMinimaRanking;
+    public void pontuarVitoria(){
+        pontuacao = pontuacao + 100;
     }
 
-    public void iniciar(){
-
+    public void pontuarEmpate(){
+        pontuacao = pontuacao + 50;
     }
 
-    public boolean isFinalizado(){
-        return true;
+    public int getPontuacao(){
+        return pontuacao;
     }
 
-    public int getPontuacaoFinal(){
-        return 0;
+    public void pontuarDerrota(){
+        vidas--;
     }
+
 }
