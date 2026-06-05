@@ -1,6 +1,8 @@
 package useCase;
 
 import entities.Fliperama;
+import entities.Ranking;
+import entities.RegistroRanking;
 import useCase.ports.JogarPartidaInput;
 import useCase.ports.JogarPartidaOutput;
 import useCase.ports.RepositoryRanking;
@@ -23,7 +25,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
     }
 
     @Override
-    public void RegistrarNomeRanking(String nomeJogador) {
+    public void RegistrarNomeRanking(RegistroRanking registro, Ranking ranking) {
 
     }
 

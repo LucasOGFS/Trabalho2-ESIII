@@ -1,16 +1,20 @@
 package entities;
 
 public class  RegistroRanking {
-    private int puntuacao;
+    private int pontuacao;
     private String iniciais;
-    private String nomeJogo;
 
-    public int getPuntuacao() {
-        return puntuacao;
+    public RegistroRanking(int pontuacao, String iniciais) {
+        this.pontuacao = pontuacao;
+        this.iniciais = iniciais;
     }
 
-    public void setPuntuacao(int puntuacao) {
-        this.puntuacao = puntuacao;
+    public int getPontuacao() {
+        return pontuacao;
+    }
+
+    public void setPontuacao(int pontuacao) {
+        this.pontuacao = pontuacao;
     }
 
     public String getIniciais() {
@@ -19,13 +23,5 @@ public class  RegistroRanking {
 
     public void setIniciais(String iniciais) {
         this.iniciais = iniciais;
-    }
-
-    public String getNomeJogo() {
-        return nomeJogo;
-    }
-
-    public void setNomeJogo(String nomeJogo) {
-        this.nomeJogo = nomeJogo;
     }
 }
