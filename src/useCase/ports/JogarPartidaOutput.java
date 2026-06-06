@@ -12,6 +12,7 @@ public interface JogarPartidaOutput {
     void exibirResultadoRodada(String mensagemRodada, int pontuacao, int vidas);
     void exibirPontuacaoFinal(int pontuacaoFinal);
     void perguntarSalvarRanking();
+    void solicitarNomeJogador();
     void exibirMensagem(String mensagem);
     void exibirTelaInicial();
 }

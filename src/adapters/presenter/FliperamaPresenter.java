@@ -39,6 +39,11 @@ public class FliperamaPresenter implements JogarPartidaOutput {
     }
 
     @Override
+    public void solicitarNomeJogador(){
+
+    }
+
+    @Override
     public void exibirMensagem(String mensagem) {
 
     }
