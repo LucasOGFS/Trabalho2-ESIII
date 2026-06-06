@@ -8,9 +8,15 @@ import java.util.List;
 
 public class FliperamaPresenter implements JogarPartidaOutput {
 
+    private final FliperamaView ui;
+
+    public FliperamaPresenter(FliperamaView ui) {
+        this.ui = ui;
+    }
+
     @Override
     public void exibirCreditoAdicionado(int creditosAtuais) {
-
+        ui.setLabelCreditos(creditosAtuais);
     }
 
     @Override
@@ -45,7 +51,7 @@ public class FliperamaPresenter implements JogarPartidaOutput {
 
     @Override
     public void exibirMensagem(String mensagem) {
-
+        ui.setLabelMensagem(mensagem);
     }
 
     @Override

@@ -32,6 +32,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
         Jogo jogo = fliperama.buscarJogoPorNome(nomeJogo);
         if(jogo == null){
             presenter.exibirMensagem("Jogo não encontrado!");
+            return;
         }
         if(!fliperama.consumirCreditos()){
             presenter.exibirMensagem("Créditos insuficientes! Insira uma ficha.");
@@ -52,17 +53,50 @@ public class JogarPartidaUC implements JogarPartidaInput {
         presenter.exibirResultadoRodada(resultado, jogoAtual.getPontuacao(), jogoAtual.getVidas());
 
         if(jogoAtual.isGameOver()){
-
+            presenter.exibirPontuacaoFinal(jogoAtual.getPontuacao());
+            verificarRanking();
         }
     }
 
     @Override
     public void responderSalvarRanking(boolean resposta) {
-
+        if (resposta) {
+            // Passo 12: Jogador quer salvar: Solicitar nome/iniciais
+            presenter.solicitarNomeJogador();
+        } else {
+            // Fluxo Alternativo b-e: Jogador não quer salvar
+            presenter.exibirMensagem("Obrigado e volte sempre!");
+            encerrar();
+        }
     }
 
     @Override
     public void informarIniciaisRanking(String iniciais) {
+        if (jogoAtual == null) return;
 
+        // Passo 13-14: Registrar nome e pontuação no ranking
+        RegistroRanking registro = new RegistroRanking(jogoAtual.getPontuacao(), iniciais);
+        this.ranking.salvarRegistroNoRanking(jogoAtual.getNome(), registro);
+
+        presenter.exibirMensagem("Ranking salvo com sucesso!");
+        encerrar();
+    }
+
+    private void verificarRanking() {
+        Ranking ranking = this.ranking.obterRankings(jogoAtual.getNome());
+        // Se não existe ranking ainda, qualquer pontuação é elegível
+        boolean elegivel = (ranking == null) || ranking.isElegivel(jogoAtual.getPontuacao());
+        if (elegivel) {
+            presenter.perguntarSalvarRanking();
+        } else {
+            presenter.exibirMensagem("Obrigado e volte sempre!");
+            encerrar();
+        }
+    }
+
+    private void encerrar() {
+        // Passo 15: Limpar estado e retornar à tela inicial
+        jogoAtual = null;
+        presenter.exibirTelaInicial();
     }
 }
