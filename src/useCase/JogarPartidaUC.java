@@ -29,8 +29,8 @@ public class JogarPartidaUC implements JogarPartidaInput {
 
     @Override
     public void iniciarPartida(String nomeJogo) {
-        Jogo jogo = fliperama.buscarJogoPorNome(nomeJogo);
-        if(jogo == null){
+        this.jogoAtual = fliperama.buscarJogoPorNome(nomeJogo);
+        if(this.jogoAtual == null){
             presenter.exibirMensagem("Jogo não encontrado!");
             return;
         }
@@ -38,8 +38,9 @@ public class JogarPartidaUC implements JogarPartidaInput {
             presenter.exibirMensagem("Créditos insuficientes! Insira uma ficha.");
             return;
         }
-        this.jogoAtual = jogo;
-        presenter.exibirTelaJogo(jogoAtual.getNome());
+        presenter.exibirTelaJogo(this.jogoAtual.getNome());
+        presenter.exibirCreditoAdicionado(fliperama.getCreditos());
+        presenter.exibirResultadoRodada("Partida iniciada! Boa sorte.", this.jogoAtual.getPontuacao(), this.jogoAtual.getVidas());
     }
 
 

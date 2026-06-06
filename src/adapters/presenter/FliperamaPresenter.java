@@ -26,27 +26,27 @@ public class FliperamaPresenter implements JogarPartidaOutput {
 
     @Override
     public void exibirTelaJogo(String nomeJogo) {
-
+        ui.mostrarTelaJogo(nomeJogo);
     }
 
     @Override
     public void exibirResultadoRodada(String mensagemRodada, int pontuacao, int vidas) {
-
+        ui.atualizarTelaJogo(mensagemRodada, pontuacao, vidas);
     }
 
     @Override
     public void exibirPontuacaoFinal(int pontuacaoFinal) {
-
+        ui.atualizarTelaJogo("Fim de jogo! Pontuação final: " + pontuacaoFinal, pontuacaoFinal, 0);
     }
 
     @Override
     public void perguntarSalvarRanking() {
-
+        ui.perguntarSalvarRanking();
     }
 
     @Override
     public void solicitarNomeJogador(){
-
+        ui.abrirPromptIniciaisRanking();
     }
 
     @Override
@@ -56,6 +56,6 @@ public class FliperamaPresenter implements JogarPartidaOutput {
 
     @Override
     public void exibirTelaInicial() {
-
+        ui.mostraTelaInicial(List.of());
     }
 }
