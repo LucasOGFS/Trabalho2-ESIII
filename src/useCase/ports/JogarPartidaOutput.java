@@ -3,8 +3,17 @@ package useCase.ports;
 import entities.Ranking;
 import entities.RegistroRanking;
 
+import java.util.List;
+
 public interface JogarPartidaOutput {
-void finalizarPartida();
-void RegistrarNomeRanking (RegistroRanking registro, Ranking ranking);
+    void exibirCreditoAdicionado(int creditosAtuais);
+    void exibirTelaSelecaoJogos(List<String> jogosDisponiveis);
+    void exibirTelaJogo(String nomeJogo);
+    void exibirResultadoRodada(String mensagemRodada, int pontuacao, int vidas);
+    void exibirPontuacaoFinal(int pontuacaoFinal);
+    void perguntarSalvarRanking();
+    void solicitarNomeJogador();
+    void exibirMensagem(String mensagem);
+    void exibirTelaInicial();
 }
 
