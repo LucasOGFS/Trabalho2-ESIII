@@ -8,6 +8,7 @@ public class Fliperama {
 //atributos
     private int creditos;
     List<Jogo> jogosCadastrados = new ArrayList<>();
+    String status = "Aguardando Ficha";
 
 //construtor
     public Fliperama(int creditos, List<Jogo> jogosCadastrados) {
@@ -15,9 +16,16 @@ public class Fliperama {
         this.jogosCadastrados = jogosCadastrados;
     }
 
+    public Fliperama (int creditos, List<Jogo> jogosCadastrados, String status ){
+        this.creditos = creditos;
+        this.jogosCadastrados = jogosCadastrados;
+        this.status = status;
+    }
+
 // Métodos
     public void adicionarCreditos(){
         creditos++;
+        this.status = "Aguardando Seleção de Jogo";
     }
 
     public boolean consumirCreditos(){
@@ -32,6 +40,15 @@ public class Fliperama {
 
     public int getCreditos() {
         return creditos;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+        System.out.println(status);
     }
 
     public Jogo buscarJogoPorNome(String nome){

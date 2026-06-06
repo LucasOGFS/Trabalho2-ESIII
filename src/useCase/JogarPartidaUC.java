@@ -44,6 +44,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
         presenter.exibirTelaJogo(this.jogoAtual.getNome());
         presenter.exibirCreditoAdicionado(fliperama.getCreditos());
         presenter.exibirResultadoRodada("Partida iniciada! Boa sorte.", this.jogoAtual.getPontuacao(), this.jogoAtual.getVidas());
+        fliperama.setStatus("Executando jogo");
     }
 
 
@@ -57,6 +58,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
         presenter.exibirResultadoRodada(resultado, jogoAtual.getPontuacao(), jogoAtual.getVidas());
 
         if(jogoAtual.isGameOver()){
+            fliperama.setStatus("Jogo Finalizado!");
             presenter.exibirPontuacaoFinal(jogoAtual.getPontuacao());
             verificarRanking();
         }
@@ -89,6 +91,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
         // Se não existe ranking ainda, qualquer pontuação é elegível
         boolean elegivel = (ranking == null) || ranking.isElegivel(jogoAtual.getPontuacao());
         if (elegivel) {
+            fliperama.setStatus("Salvando Ranking.");
             presenter.perguntarSalvarRanking();
         } else {
             presenter.exibirMensagem("Obrigado e volte sempre!");
@@ -105,6 +108,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
             }
         }
         jogoAtual = null;
+        fliperama.setStatus("Aguardando Ficha.");
         presenter.exibirTelaInicial(fliperama.getCreditos(), recordes);
     }
 }
