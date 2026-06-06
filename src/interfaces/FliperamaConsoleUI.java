@@ -29,6 +29,8 @@ public class FliperamaConsoleUI {
 
     private static final List<String> Jogos_Disponiveis = List.of("Pedra, Papel e Tesoura", "Par ou Impar");
 
+    private static String status;
+
     public void start(Stage stage) {
         this.primaryStage = stage;
         stage.setTitle("Fliperama");
@@ -65,6 +67,7 @@ public class FliperamaConsoleUI {
                 tituloRanking, painelRanking);
         raiz.setPadding(new Insets(24));
         raiz.setAlignment(Pos.TOP_CENTER);
+        status = "Aguardando Ficha";
         return raiz;
     }
 
