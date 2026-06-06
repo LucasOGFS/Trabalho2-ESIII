@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface JogarPartidaOutput {
     void exibirCreditoAdicionado(int creditosAtuais);
+
+    void exibirTelaSelecaoJogos(List<String> jogosDisponiveis);
+
     void exibirTelaJogo(String nomeJogo);
     void exibirResultadoRodada(String mensagemRodada, int pontuacao, int vidas);
     void exibirPontuacaoFinal(int pontuacaoFinal);

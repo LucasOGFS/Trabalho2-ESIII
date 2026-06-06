@@ -1,6 +1,5 @@
 package adapters.presenter;
 
-import entities.Ranking;
 import entities.RegistroRanking;
 import useCase.ports.JogarPartidaOutput;
 
