@@ -33,6 +33,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
         Jogo jogo = fliperama.buscarJogoPorNome(nomeJogo);
         if(jogo == null){
             presenter.exibirMensagem("Jogo não encontrado!");
+            return;
         }
         if(!fliperama.consumirCreditos()){
             presenter.exibirMensagem("Créditos insuficientes! Insira uma ficha.");
