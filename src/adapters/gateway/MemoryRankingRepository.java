@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
     public class MemoryRankingRepository implements RepositoryRanking {
-        private final String caminhoArquivo = "./resources/repository/ranking.txt";
+        private final String caminhoArquivo = "resources/repository/ranking.txt";
         private static final int LIMITE_RANKING = 10;
         private static final String SEPARADOR_JOGO = "----------------------";
 
@@ -43,7 +43,7 @@ import java.util.Map;
                         if (linha.equals(SEPARADOR_JOGO)) {
                             return new Ranking(listaRanking);
                         }
-                        // 3. Lê e adiciona o registro
+
                         String[] partes = linha.split(";");
                         if (partes.length == 2) {
                             String iniciais = partes[0];

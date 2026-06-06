@@ -1,4 +1,17 @@
-pontuacao;inicial;jogo
 Pedra, Papel e Tesoura
-rms;50
+Gabriel;700
+Bruno;250
+Rafael;0
+----------------------
+Par ou Impar
+King;1500
+mikeall;900
+Gabriel;700
+Lucas;600
+Luís;500
+Bruno;400
+Bruninho;400
+Rafael;300
+Rafael;200
+Teste;200
 ----------------------

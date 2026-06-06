@@ -55,7 +55,8 @@ public class FliperamaPresenter implements JogarPartidaOutput {
     }
 
     @Override
-    public void exibirTelaInicial() {
-        ui.mostraTelaInicial(List.of());
+    public void exibirTelaInicial(int creditos, List<RegistroRanking> recordes) {
+        ui.setLabelCreditos(creditos);
+        ui.mostraTelaInicial(recordes);
     }
 }
