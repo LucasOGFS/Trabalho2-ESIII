@@ -8,5 +8,5 @@ import entities.RegistroRanking;
 public interface JogarPartidaInput {
     void iniciarPartida(String nomeJogo);
     void inserirFicha();
-    void realizarJogada();
+    void realizarJogada(String entradaJogador);
 }

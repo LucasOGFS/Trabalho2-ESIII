@@ -24,10 +24,8 @@ public abstract class Jogo {
         pontuacao = pontuacao + 100;
     }
 
-    public void pontuarEmpate()
-    {
+    public void pontuarEmpate() {
         pontuacao = pontuacao + 50;
-
     }
 
     public int getPontuacao()
@@ -39,4 +37,13 @@ public abstract class Jogo {
         vidas--;
     }
 
+    public int getVidas(){
+        return vidas;
+    }
+
+    public boolean isGameOver() {
+        return vidas <= 0;
+    }
+
+    public abstract String realizarJogada(String entradaJogar);
 }

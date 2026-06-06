@@ -30,7 +30,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
     }
 
     @Override
-    public void realizarJogada() {
+    public void realizarJogada(String entradaJogador) {
 
     }
 }
