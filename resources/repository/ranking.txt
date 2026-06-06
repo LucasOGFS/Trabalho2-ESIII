@@ -1,1 +1,4 @@
 pontuacao;inicial;jogo
+Pedra, Papel e Tesoura
+rms;50
+----------------------

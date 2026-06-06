@@ -18,6 +18,14 @@ public class FliperamaController {
         useCase.iniciarPartida(nomeJogo);
     }
 
+    public void aoRealizarJogada(String entrada) {
+        useCase.realizarJogada(entrada);
+    }
+
+    public void aoResponderSalvarRanking(boolean resposta) {
+        useCase.responderSalvarRanking(resposta);
+    }
+
     public void aoDigitarIniciais(String iniciais) {
         useCase.informarIniciaisRanking(iniciais);
     }

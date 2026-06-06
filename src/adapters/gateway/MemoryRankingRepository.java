@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
     public class MemoryRankingRepository implements RepositoryRanking {
-        private final String caminhoArquivo = "/resources/repository/ranking.txt";
+        private final String caminhoArquivo = "./resources/repository/ranking.txt";
         private static final int LIMITE_RANKING = 10;
         private static final String SEPARADOR_JOGO = "----------------------";
 
