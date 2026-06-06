@@ -2,16 +2,15 @@ package adapters.presenter;
 
 import entities.Ranking;
 import entities.RegistroRanking;
-import interfaces.FliperamaJavaFXUI;
 import useCase.ports.JogarPartidaOutput;
 
 import java.util.List;
 
 public class FliperamaPresenter implements JogarPartidaOutput {
 
-    private final FliperamaJavaFXUI ui;
+    private final FliperamaView ui;
 
-    public FliperamaPresenter(FliperamaJavaFXUI ui) {
+    public FliperamaPresenter(FliperamaView ui) {
         this.ui = ui;
     }
 

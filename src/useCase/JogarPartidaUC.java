@@ -1,6 +1,5 @@
 package useCase;
 
-import adapters.gateway.MemoryRankingRepository;
 import entities.Fliperama;
 import entities.Jogo;
 import entities.Ranking;

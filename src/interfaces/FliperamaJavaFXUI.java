@@ -1,6 +1,7 @@
 package interfaces;
 
 import adapters.controller.FliperamaController;
+import adapters.presenter.FliperamaView;
 import entities.RegistroRanking;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -18,7 +19,7 @@ import javafx.collections.ObservableList;
 import java.util.List;
 import java.util.Optional;
 
-public class FliperamaJavaFXUI {
+public class FliperamaJavaFXUI implements FliperamaView {
 
     private FliperamaController controller;
     private Stage primaryStage;
@@ -88,6 +89,7 @@ public class FliperamaJavaFXUI {
         tabelaRanking.setPlaceholder(new Label("Nenhum recorde ainda."));
     }
 
+    @Override
     public void mostraTelaInicial(List<RegistroRanking> recordes) {
         painelJogos.getChildren().clear();
         for (String nomeJogo : Jogos_Disponiveis) {
@@ -97,24 +99,27 @@ public class FliperamaJavaFXUI {
             painelJogos.getChildren().add(btn);
         }
 
-        // List (Java puro) -> ObservableList (JavaFX) -> TableView
         ObservableList<RegistroRanking> dados =
                 FXCollections.observableArrayList(recordes == null ? List.of() : recordes);
         tabelaRanking.setItems(dados);
     }
 
+    @Override
     public void setLabelCreditos(int creditos) {
         labelCreditos.setText("Creditos: " + creditos);
     }
 
+    @Override
     public void setLabelMensagem(String msg) {
         labelMensagem.setText(msg);
     }
 
+    @Override
     public void setLabelPontuacao(int score) {
         labelPontuacao.setText("Pontuação: " + score);
     }
 
+    @Override
     public void abrirPromptIniciaisRanking() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Novo recorde!");
