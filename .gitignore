@@ -1,0 +1,5 @@
+# Build do Maven
+/target/
+
+# Saida de compilacao antiga do IntelliJ
+/out/
