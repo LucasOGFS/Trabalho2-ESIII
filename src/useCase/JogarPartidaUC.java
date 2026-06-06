@@ -8,6 +8,8 @@ import useCase.ports.JogarPartidaInput;
 import useCase.ports.JogarPartidaOutput;
 import useCase.ports.RepositoryRanking;
 
+import java.util.List;
+
 public class JogarPartidaUC implements JogarPartidaInput {
     private final JogarPartidaOutput presenter;
     private final Fliperama fliperama;
@@ -38,6 +40,7 @@ public class JogarPartidaUC implements JogarPartidaInput {
             presenter.exibirMensagem("Créditos insuficientes! Insira uma ficha.");
             return;
         }
+        this.jogoAtual.reiniciar();
         presenter.exibirTelaJogo(this.jogoAtual.getNome());
         presenter.exibirCreditoAdicionado(fliperama.getCreditos());
         presenter.exibirResultadoRodada("Partida iniciada! Boa sorte.", this.jogoAtual.getPontuacao(), this.jogoAtual.getVidas());
@@ -62,10 +65,8 @@ public class JogarPartidaUC implements JogarPartidaInput {
     @Override
     public void responderSalvarRanking(boolean resposta) {
         if (resposta) {
-            // Passo 12: Jogador quer salvar: Solicitar nome/iniciais
             presenter.solicitarNomeJogador();
         } else {
-            // Fluxo Alternativo b-e: Jogador não quer salvar
             presenter.exibirMensagem("Obrigado e volte sempre!");
             encerrar();
         }
@@ -96,8 +97,14 @@ public class JogarPartidaUC implements JogarPartidaInput {
     }
 
     private void encerrar() {
-        // Passo 15: Limpar estado e retornar à tela inicial
+        List<RegistroRanking> recordes = List.of();
+        if (jogoAtual != null) {
+            Ranking r = ranking.obterRankings(jogoAtual.getNome());  // ranking do jogo jogado
+            if (r != null) {
+                recordes = r.getRanking();
+            }
+        }
         jogoAtual = null;
-        presenter.exibirTelaInicial();
+        presenter.exibirTelaInicial(fliperama.getCreditos(), recordes);
     }
 }

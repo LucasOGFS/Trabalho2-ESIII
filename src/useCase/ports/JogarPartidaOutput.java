@@ -14,6 +14,6 @@ public interface JogarPartidaOutput {
     void perguntarSalvarRanking();
     void solicitarNomeJogador();
     void exibirMensagem(String mensagem);
-    void exibirTelaInicial();
+    void exibirTelaInicial(int creditos, List<RegistroRanking> ranking);
 }
 

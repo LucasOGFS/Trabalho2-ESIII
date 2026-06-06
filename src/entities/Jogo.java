@@ -46,4 +46,9 @@ public abstract class Jogo {
     }
 
     public abstract String realizarJogada(String entradaJogar);
+
+    public void reiniciar(){
+        this.pontuacao = 0;
+        this.vidas = 3;
+    }
 }

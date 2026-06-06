@@ -1,4 +1,13 @@
 pontuacao;inicial;jogo
 Pedra, Papel e Tesoura
+Jorge;650
+Oi;450
+dfghjm,.;400
+oi;250
+Gabriel;200
 rms;50
+----------------------
+Par ou Impar
+Andrew;200
+ghjk;100
 ----------------------
