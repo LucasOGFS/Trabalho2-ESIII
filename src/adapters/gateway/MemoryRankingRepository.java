@@ -15,23 +15,19 @@ import java.util.Map;
         private static final int LIMITE_RANKING = 10;
         private static final String SEPARADOR_JOGO = "----------------------";
         @Override
-        public List<RegistroRanking> obterRankings(String nomeJogo) {
+        public Ranking obterRankings(String nomeJogo) {
             Map<String, List<RegistroRanking>> todosRankings = lerTodosOsRankings();
 
-            List<RegistroRanking> rankingJogo = todosRankings.getOrDefault(nomeJogo, new ArrayList<>());
+            List<RegistroRanking> ListarankingJogo = todosRankings.getOrDefault(nomeJogo, new ArrayList<>());
 
             // 3. Garante que os registros retornem ordenados decrescentemente (do maior para o menor)
-            rankingJogo.sort((r1, r2) -> Integer.compare(r2.getPontuacao(), r1.getPontuacao()));
-
-            return rankingJogo;
+            ListarankingJogo.sort((r1, r2) -> Integer.compare(r2.getPontuacao(), r1.getPontuacao()));
+            return (Ranking) ListarankingJogo;
         }
         @Override
         public void salvarRegistroNoRanking(String nomeJogo, RegistroRanking registro) {
-            // 1. Carrega todos os rankings atuais em memória
             Map<String, List<RegistroRanking>> todosRankings = lerTodosOsRankings();
-            // 2. Adiciona o novo registro na lista do jogo correspondente
             todosRankings.computeIfAbsent(nomeJogo, k -> new ArrayList<>()).add(registro);
-            // 3. Salva e reescreve todo o arquivo atualizando as tabelas de 10 colocados
             salvarTodosOsRankings(todosRankings);
         }
         // Método auxiliar para ler o arquivo estruturado e carregar na memória

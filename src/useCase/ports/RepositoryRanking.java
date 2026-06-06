@@ -6,6 +6,6 @@ import entities.RegistroRanking;
 import java.util.List;
 
 public interface RepositoryRanking {
-    List<RegistroRanking> obterRankings(String nomeJogo);
+    Ranking obterRankings(String nomeJogo);
     void salvarRegistroNoRanking(String nomeJogo, RegistroRanking registro);
 }
